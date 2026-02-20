@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Paresh's Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
@@ -13,30 +14,39 @@
         <nav>
             <div class="left">Paresh's Portfolio</div>
             <div class="right">
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/">About</a></li>
-                    <li><a href="/">Services</a></li>
-                    <li><a href="D:\My Project\myntra project\index.html">Project</a></li>
-                    <li><a href="/">Contect Me</a></li>
-
+                <ul id="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
                 </ul>
+                <div id="theme-toggle">
+                    <i class="fa-solid fa-sun"></i>
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </div>
         </nav>
     </header>
-    <main>
-        <section class="firstsection">
+    <main id="home">
+        <section class="firstsection" id="about">
             <div class="leftsection">
-                Hi,My Name is <span class="purpal">Paresh</span>
-                <div>and I am a Passionnate</div>
+                Hi, My Name is <span class="purple">Paresh</span>
+                <div>and I am a Passionate</div>
                 <span id="element"></span>
                 <div class="buttons">
-                    <button class="btn1"><a href="Paresh_Solanki_Resume (1).pdf"> Reasume</a></button>
-                    <button class="btn">Visit GitHub</button>
+                    <a href="Paresh_Solanki_Resume (1).pdf" class="btn btn-primary" download>Resume</a>
+                    <a href="https://github.com/" target="_blank" class="btn btn-secondary">Visit GitHub</a>
                 </div>
             </div>
             <div class="rightsection">
-                <img src="PARESH.jpg" alt="developer">
+                <div class="image-box">
+                    <img src="PARESH.jpg" alt="developer">
+                </div>
                 <div class="social-media">
                     <div>
                         <img id="icon" src="instagram.jpg" alt="instagram">
@@ -51,94 +61,186 @@
                         <h4>whatsapp</h4>
                     </div>
                 </div>
+            </div>
 
         </section>
         <hr>
-        <section class="secondsection">
+        <section class="secondsection reveal" id="experience">
             <span class="text-gray">What I have done so far</span>
             <h1>Work Experience</h1>
-            <div class="box1">
-                <div class="vartical">
-                    <div class="vartical-title">Html Developer(2023-2024)</div>
-                    <div class="vartical-desc">Lorem ipsum dolor amet sconsecter adipicing elit,
-                        Libero unde omnis ullam,enim facilis possimus accus,
-                        Dolores mollitia odio quos.Facilis ,incidunt?
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2023-2024</div>
+                    <div class="timeline-content">
+                        <h3>HTML Developer</h3>
+                        <p>Lorem ipsum dolor amet sconsecter adipicing elit, Libero unde omnis ullam.</p>
                     </div>
                 </div>
 
-                <div class="box2">
-                    <div class="vartical">
-                        <div class="vartical-title">Css Developer(2023-2024)</div>
-                        <div class="vartical-desc">Lorem ipsum dolor amet sconsecter adipicing elit,
-                            Libero unde omnis ullam,enim facilis possimus accus,
-                            Dolores mollitia odio quos.Facilis ,incidunt?
-                        </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2023-2024</div>
+                    <div class="timeline-content">
+                        <h3>CSS Developer</h3>
+                        <p>Lorem ipsum dolor amet sconsecter adipicing elit, Libero unde omnis ullam.</p>
                     </div>
-                    <div class="box3">
-                        <div class="vartical">
-                            <div class="vartical-title">JS Developer(2023-2024)</div>
-                            <div class="vartical-desc">Lorem ipsum dolor amet sconsecter adipicing elit,
-                                Libero unde omnis ullam,enim facilis possimus accus,
-                                Dolores mollitia odio quos.Facilis ,incidunt?
-                            </div>
-                        </div>
-                        <div class="box4">
-                            <div class="vartical">
-                                <div class="vartical-title">Python Developer(2024-2025)</div>
-                                <div class="vartical-desc">Lorem ipsum dolor amet sconsecter adipicing elit,
-                                    Libero unde omnis ullam,enim facilis possimus accus,
-                                    Dolores mollitia odio quos.Facilis ,incidunt?
-                                </div>
-                            </div>
-                            <div class="box5">
-                                <div class="vartical">
-                                    <div class="vartical-title">Java Developer(203-2024)</div>
-                                    <div class="vartical-desc">Lorem ipsum dolor amet sconsecter adipicing elit,
-                                        Libero unde omnis ullam,enim facilis possimus accus,
-                                        Dolores mollitia odio quos.Facilis ,incidunt?
-                                    </div>
-                                </div>
-                            </div>
+                </div>
 
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2023-2024</div>
+                    <div class="timeline-content">
+                        <h3>JS Developer</h3>
+                        <p>Lorem ipsum dolor amet sconsecter adipicing elit, Libero unde omnis ullam.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">2024-2025</div>
+                    <div class="timeline-content">
+                        <h3>Python Developer</h3>
+                        <p>Lorem ipsum dolor amet sconsecter adipicing elit, Libero unde omnis ullam.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+        <section class="secondsection reveal" id="skills">
+            <span class="text-gray">My Technical Level</span>
+            <h1>My Skills</h1>
+            <div class="skills-container">
+                <div class="skills-track">
+                    <!-- Original Skills -->
+                    <div class="skill-box">
+                        <i class="fa-brands fa-html5" style="color: #e34c26;"></i>
+                        <h3>HTML</h3>
+                    </div>
+                    <div class="skill-box">
+                        <i class="fa-brands fa-css3-alt" style="color: #264de4;"></i>
+                        <h3>CSS</h3>
+                    </div>
+                    <div class="skill-box">
+                        <i class="fa-brands fa-js" style="color: #f0db4f;"></i>
+                        <h3>JavaScript</h3>
+                    </div>
+                    <div class="skill-box">
+                        <i class="fa-brands fa-python" style="color: #306998;"></i>
+                        <h3>Python</h3>
+                    </div>
+                    <div class="skill-box">
+                        <i class="fa-brands fa-java" style="color: #5382a1;"></i>
+                        <h3>Java</h3>
+                    </div>
+                    <div class="skill-box">
+                        <i class="fa-brands fa-react" style="color: #61dbfb;"></i>
+                        <h3>React</h3>
+                    </div>
+                    <!-- Duplicate Skills for Sliding Effect -->
+                    <div class="skill-box">
+                        <i class="fa-brands fa-html5" style="color: #e34c26;"></i>
+                        <h3>HTML</h3>
+                    </div>
+                    <div class="skill-box">
+                        <i class="fa-brands fa-css3-alt" style="color: #264de4;"></i>
+                        <h3>CSS</h3>
+                    </div>
+                    <div class="skill-box">
+                        <i class="fa-brands fa-js" style="color: #f0db4f;"></i>
+                        <h3>JavaScript</h3>
+                    </div>
+                    <div class="skill-box">
+                        <i class="fa-brands fa-python" style="color: #306998;"></i>
+                        <h3>Python</h3>
+                    </div>
+                    <div class="skill-box">
+                        <i class="fa-brands fa-java" style="color: #5382a1;"></i>
+                        <h3>Java</h3>
+                    </div>
+                    <div class="skill-box">
+                        <i class="fa-brands fa-react" style="color: #61dbfb;"></i>
+                        <h3>React</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+        <section class="secondsection reveal" id="projects">
+            <span class="text-gray">My Portfolio</span>
+            <h1>Recent Projects</h1>
+            <div class="project-container">
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fa-brands fa-amazon"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Amazon Clone</h3>
+                        <p>A responsive replica of the Amazon e-commerce website.</p>
+                        <a href="#" class="btn btn-secondary">View Details</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Myntra Clone</h3>
+                        <p>A functional clone of the Myntra fashion store.</p>
+                        <a href="#" class="btn btn-secondary">View Details</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fa-solid fa-list-check"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>To-Do App</h3>
+                        <p>Interactive task management app with drag-and-drop features.</p>
+                        <a href="#" class="btn btn-secondary">View Details</a>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
 
-    <footer>
-        <div class="footer">
-            <div class="footer-first">
-                <h3>Paresh's Developer Portfolio</h3>
+    <footer id="contact" class="reveal">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h3>Paresh</h3>
+                <p>Passionate Web Developer & Graphic Designer creating seamless web experiences. Let's build something amazing together.</p>
+                <div class="social-links">
+                    <a href="https://github.com/" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
             </div>
-            <div class="footer-second">
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/">About</a></li>
-                    <li><a href="/">Services</a></li>
-                    <li><a href="/">Project</a></li>
-                    <li><a href="/">Contect Me</a></li>
+
+            <div class="footer-section links">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#projects">Projects</a></li>
                 </ul>
             </div>
-            <div class="footer-third">
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/">About</a></li>
-                    <li><a href="/">Services</a></li>
-                    <li><a href="/">Project</a></li>
-                    <li><a href="/">Contect Me</a></li>
-                </ul>
-            </div>
-            <div class="footer-fourth">
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/">About</a></li>
-                    <li><a href="/">Services</a></li>
-                    <li><a href="/">Project</a></li>
-                    <li><a href="/">Contect Me</a></li>
+
+            <div class="footer-section contact">
+                <h3>Contact Info</h3>
+                <ul class="contact-details">
+                    <li><i class="fa-solid fa-location-dot"></i> Gujarat, India</li>
+                    <li><i class="fa-solid fa-phone"></i> +91 1234567890</li>
+                    <li><i class="fa-solid fa-envelope"></i> contact@paresh.com</li>
                 </ul>
             </div>
         </div>
-        <div class="footer-rights">
-            Copyrights &#169; pareshPortfolio.com | All rights reserved
+        <div class="footer-bottom">
+            Copyrights &#169; 2024 PareshPortfolio.com | All rights reserved
         </div>
     </footer>
 
@@ -149,6 +251,49 @@
             strings: ['Web Developer', 'Graphic Designer', 'Web Designer', 'video Editer'],
             typeSpeed: 50,
         });
+
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navLinks = document.getElementById('nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('nav ul li a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        const icon = themeToggle.querySelector('i');
+
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('light-mode');
+            icon.classList.toggle('fa-sun');
+            icon.classList.toggle('fa-moon');
+        });
+
+        // Scroll Reveal Animation Script
+        window.addEventListener('scroll', reveal);
+
+        function reveal(){
+            var reveals = document.querySelectorAll('.reveal');
+
+            for(var i = 0; i < reveals.length; i++){
+                var windowheight = window.innerHeight;
+                var revealtop = reveals[i].getBoundingClientRect().top;
+                var revealpoint = 150;
+
+                if(revealtop < windowheight - revealpoint){
+                    reveals[i].classList.add('active');
+                }
+            }
+        }
     </script>
 </body>
 
