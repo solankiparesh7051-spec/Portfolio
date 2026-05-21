@@ -1,3 +1,114 @@
+/* Container Background with Deep Cyberpunk Aesthetics */
+.developer-card-container {
+  background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  background-image: 
+    radial-gradient(circle at 80% 20%, rgba(76, 29, 149, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 20% 80%, rgba(124, 58, 237, 0.1) 0%, transparent 50%);
+  padding: 4rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 600px;
+  font-family: 'Fira Code', 'Courier New', Courier, monospace;
+  perspective: 1200px; 
+  overflow: hidden;
+}
+
+/* 3D Rotating Circle Wrapper */
+.code-circle-wrapper {
+  width: 100%;
+  max-width: 480px; /* Kept slightly smaller to preserve a perfect circle shape */
+  aspect-ratio: 1 / 1; /* Forces height to exactly match width */
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transform-style: preserve-3d;
+  
+  /* Initial continuous rotation angle */
+  transform: rotateX(25deg) rotateY(-30deg) rotateZ(10deg);
+  animation: floatCircle 8s ease-in-out infinite alternate;
+}
+
+/* Hover Effect: Levels out smoothly and increases glow */
+.code-circle-wrapper:hover {
+  transform: rotateX(10deg) rotateY(-10deg) rotateZ(0deg) scale(1.05);
+}
+
+/* The Circular Code Display Disc */
+.code-circle {
+  width: 100%;
+  height: 100%;
+  background: rgba(17, 12, 28, 0.8);
+  border: 2px solid rgba(124, 58, 237, 0.4);
+  border-radius: 50%; /* Transforms layout into a perfect circle */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 
+    -30px 30px 60px rgba(0, 0, 0, 0.8), 
+    0 0 50px rgba(124, 58, 237, 0.2),
+    inset 0 0 30px rgba(124, 58, 237, 0.1); /* Inner neon ring glow */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  position: relative;
+}
+
+/* Aligns code text cleanly inside the circular borders */
+.code-content {
+  padding: 2rem;
+  text-align: left;
+}
+
+/* Typography & Alignment */
+.code-line {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #a78bfa; 
+}
+
+.indent {
+  padding-left: 2rem;
+}
+
+.method {
+  margin-top: 1.5rem;
+}
+
+/* Color Palette Syntax Highlighting */
+.keyword { color: #c084fc; }
+.variable { color: #60a5fa; }
+.property { color: #fca5a5; }
+.string { color: #a3e635; }
+.function { color: #fbbf24; }
+
+/* 3D Floating & Spinning Disc Animation */
+@keyframes floatCircle {
+  0% {
+    transform: rotateX(20deg) rotateY(-25deg) rotateZ(5deg) translateY(0px);
+  }
+  100% {
+    transform: rotateX(30deg) rotateY(-35deg) rotateZ(15deg) translateY(-20px);
+  }
+}
+
+/* Responsive Scaling for Mobile Screens */
+@media (max-width: 480px) {
+  .code-circle-wrapper {
+    max-width: 320px;
+  }
+  .code-line {
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+  .indent {
+    padding-left: 1.2rem;
+  }
+}
+
+
+
+
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Teko:wght@300..700&display=swap');
 
@@ -18,19 +129,29 @@
     --text-gray: #333333;
 }
 
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box; /* Important for layout */
 }
 body{
-    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    background-color: var(--bg-color);
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    background-size: 40px 40px, 40px 40px, 100% 100%;
+    background-attachment: fixed;
     color: var(--text-white);
     font-family: "Poppins", sans-serif;
     overflow-x: hidden;
 }
 body.light-mode {
-    background: linear-gradient(to right, #ffffff, #ece9e6);
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+        linear-gradient(to right, #ffffff, #ece9e6);
 }
 nav{
     display: flex;
@@ -554,6 +675,75 @@ main hr{
     color: var(--text-white);
 }
 
+/* --- Services Section --- */
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: 0.4s;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--gradient);
+    transform: scaleX(0);
+    transition: 0.4s;
+    transform-origin: right;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(213, 0, 249, 0.2);
+    border-color: rgba(213, 0, 249, 0.4);
+}
+
+.service-card:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.service-icon {
+    font-size: 3rem;
+    color: var(--cyan);
+    margin-bottom: 20px;
+    transition: 0.4s;
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.1);
+    color: var(--purple);
+    text-shadow: 0 0 15px var(--purple);
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    color: var(--text-white);
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: var(--text-gray);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
 /* --- Projects Section --- */
 .project-container {
     display: grid;
@@ -848,6 +1038,52 @@ footer{
     line-height: 1.5;
 }
 
+/* --- Future Section --- */
+.future-section {
+    max-width: 1000px;
+    margin: 80px auto;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.future-heading {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    color: var(--text-white);
+}
+
+.future-heading .gradient-text {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.future-subtitle {
+    font-size: 1.2rem;
+    color: var(--text-gray);
+    margin-bottom: 40px;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 229, 255, 0.2);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 10px;
+}
+
+.video-container video {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+}
+
 /* --- Mobile Responsiveness --- */
 @media (max-width: 768px) {
     .hamburger {
@@ -970,5 +1206,13 @@ footer{
     }
     .edu-icon {
         margin-bottom: 10px;
+    }
+
+    /* Future Section Mobile */
+    .future-heading {
+        font-size: 2.5rem;
+    }
+    .future-subtitle {
+        font-size: 1rem;
     }
 }
