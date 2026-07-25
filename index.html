@@ -1,386 +1,407 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paresh's Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paresh Solanki | Portfolio</title>
+    <meta name="description" content="Portfolio of Paresh Solanki - Web Developer & Computer Science Student (3rd Year, Semester 5) skilled in HTML, CSS, JS, React, C, C++, DSA, PHP, and Java.">
+    
+    <!-- Google Fonts: Inter & Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome & Devicon CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
 </head>
+<body class="dark-mode">
 
-<body>
-    <header>
-        <nav>
-            <div class="left">Paresh's Portfolio</div>
-            <div class="right">
-                <ul id="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact Me</a></li>
+    <!-- Modern Floating Header & Navbar -->
+    <header class="modern-header">
+        <nav id="desktop-nav" class="modern-navbar">
+            <div class="logo">
+                <a href="#">Paresh Solanki</a>
+            </div>
+            
+            <div class="nav-center">
+                <ul class="nav-links">
+                    <li><a href="#" class="nav-item active">Home</a></li>
+                    <li><a href="#about" class="nav-item">About</a></li>
+                    <li><a href="#skills" class="nav-item">Skills</a></li>
+                    <li><a href="#projects" class="nav-item">Projects</a></li>
+                    <li><a href="#contact" class="nav-item">Contact</a></li>
                 </ul>
-                <div id="theme-toggle">
-                    <i class="fa-solid fa-sun"></i>
+            </div>
+
+            <div class="nav-right">
+                <label class="toggle-switch" aria-label="Toggle theme">
+                    <input type="checkbox" id="theme-checkbox" />
+                    <span class="slider">
+                        <i class="fa-solid fa-moon dark-icon"></i>
+                        <i class="fa-solid fa-sun light-icon"></i>
+                    </span>
+                </label>
+            </div>
+        </nav>
+
+        <!-- Mobile Modern Navbar -->
+        <nav id="hamburger-nav" class="modern-navbar-mobile">
+            <div class="logo">
+                <a href="#">Paresh Solanki</a>
+            </div>
+            <div class="mobile-right">
+                <label class="toggle-switch" aria-label="Toggle theme">
+                    <input type="checkbox" id="theme-checkbox-mobile" />
+                    <span class="slider">
+                        <i class="fa-solid fa-moon dark-icon"></i>
+                        <i class="fa-solid fa-sun light-icon"></i>
+                    </span>
+                </label>
+                <div class="hamburger-menu">
+                    <div class="hamburger-icon" onclick="toggleMenu()">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
                 </div>
-                <div class="hamburger" id="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
+            </div>
+            <div class="menu-links" id="menu-links">
+                <li><a href="#" onclick="toggleMenu()">Home</a></li>
+                <li><a href="#about" onclick="toggleMenu()">About</a></li>
+                <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
+                <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
+                <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
             </div>
         </nav>
     </header>
-    <main id="home">
-        <section class="firstsection" id="about">
-            <div class="leftsection">
-                Hi, My Name is <span class="purple">Paresh</span>
-                <div>and I am a Passionate</div>
-                <span id="element"></span>
-                <div class="buttons">
-                    <a href="Paresh_Solanki_Resume (1).pdf" class="btn btn-primary" download>Resume</a>
-                    <a href="https://github.com/" target="_blank" class="btn btn-secondary">Visit GitHub</a>
+
+    <!-- Profile Hero Section -->
+    <section id="profile">
+        <div class="section__pic-container gsap-hero-img">
+            <div class="profile-img-wrapper">
+                <img src="photo.jpeg" alt="Paresh Solanki Profile Picture" class="profile-img" onerror="this.src='photo.jpeg'" />
+            </div>
+        </div>
+        <div class="section__text gsap-hero-text">
+            <p class="section__text__p1">Hi, It's</p>
+            <h1 class="title">Paresh Solanki</h1>
+            <p class="section__text__p1">I'm a</p>
+            <span id="element" class="typed-text"></span><br />
+            <div class="btn-container">
+                <button class="btn btn-color-2" onclick="window.open('Paresh_Solanki_Resume (1).pdf')">
+                    Download CV <i class="fa-solid fa-arrow-down"></i>
+                </button>
+                <button class="btn btn-color-1" onclick="location.href='#contact'">
+                    Contact Info <i class="fa-solid fa-envelope"></i>
+                </button>
+            </div>
+            <div id="socials-container">
+                <a href="https://www.linkedin.com/in/paresh-solanki-700b31337" target="_blank" title="LinkedIn" class="social-icon-btn linkedin-btn">
+                    <i class="fa-brands fa-linkedin icon socials"></i>
+                </a>
+                <a href="https://github.com/solankiparesh7051-spec" target="_blank" title="GitHub" class="social-icon-btn github-btn">
+                    <i class="fa-brands fa-github icon socials"></i>
+                </a>
+                <a href="https://www.instagram.com/p_a_r_e_s_h__bharwad_01?igsh=MWhseTNmaGc1emFweg==" target="_blank" title="Instagram" class="social-icon-btn instagram-btn">
+                    <i class="fa-brands fa-instagram icon socials"></i>
+                </a>
+                <a href="https://youtube.com/@pareshsolanki-n5h?si=9RcobCOnErh9ow3h" target="_blank" title="YouTube" class="social-icon-btn youtube-btn">
+                    <i class="fa-brands fa-youtube icon socials"></i>
+                </a>
+                <a href="https://wa.me/919023267236" target="_blank" title="WhatsApp" class="social-icon-btn whatsapp-btn">
+                    <i class="fa-brands fa-whatsapp icon socials"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="gsap-reveal">
+        <p class="section__text__p1">Get To Know More</p>
+        <h1 class="title">About Me</h1>
+        <div class="section-container">
+            <div class="about-pic-container">
+                <div class="about-img-wrapper">
+                    <img src="PARESH.jpg" alt="About Paresh Solanki" class="about-pic" onerror="this.src='photo.jpeg'" />
                 </div>
             </div>
-            <div class="rightsection">
-                <div class="image-box">
-                    <img src="photo.jpeg" alt="developer">
-                </div>
-                <div class="social-media">
-                    <a href="https://www.instagram.com/p_a_r_e_s_h__bharwad_01?igsh=MWhseTNmaGc1emFweg=="
-                        target="_blank" class="social-icon">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-                    <a href="https://youtube.com/@pareshsolanki-n5h?si=9RcobCOnErh9ow3h" target="_blank"
-                        class="social-icon">
-                        <i class="fa-brands fa-youtube"></i>
-                    </a>
-                    <a href="#" target="_blank" class="social-icon">
-                        <i class="fa-brands fa-whatsapp"></i>
-                    </a>
-                </div>
-            </div>
-
-        </section>
-        <hr>
-        <section class="secondsection reveal" id="experience">
-            <span class="text-gray">What I have done so far</span>
-            <h1>Work Experience</h1>
-
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2023-2024</div>
-                        <h3>HTML Developer</h3>
-                        <p>Lorem ipsum dolor amet sconsecter adipicing elit, Libero unde omnis ullam.</p>
+            <div class="about-details-container">
+                <div class="about-container">
+                    <div class="details-container glass-card">
+                        <i class="fa-solid fa-award icon"></i>
+                        <h3>Experience</h3>
+                        <p>3+ months <br />Web & Software Development</p>
+                    </div>
+                    <div class="details-container glass-card">
+                        <i class="fa-solid fa-graduation-cap icon"></i>
+                        <h3>Education</h3>
+                        <p>BCA 2024-2027<br />Shree Swaminarayan College of CS (3rd Year, Sem 5)</p>
                     </div>
                 </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2023-2024</div>
-                        <h3>CSS Developer</h3>
-                        <p>Lorem ipsum dolor amet sconsecter adipicing elit, Libero unde omnis ullam.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2023-2024</div>
-                        <h3>JS Developer</h3>
-                        <p>Lorem ipsum dolor amet sconsecter adipicing elit, Libero unde omnis ullam.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-content">
-                        <div class="timeline-date">2024-2025</div>
-                        <h3>Python Developer</h3>
-                        <p>Lorem ipsum dolor amet sconsecter adipicing elit, Libero unde omnis ullam.</p>
-                    </div>
+                <div class="text-container glass-card">
+                    <p>
+                        I am a 3rd year BCA student (currently in Semester 5) at Shree Swaminarayan College of Computer Science with 3+ months of hands-on experience in web development and programming. I specialize in HTML, CSS, JavaScript, React, C, C++, Data Structures & Algorithms, PHP, and Java. I am passionate about writing clean code, solving complex logic, and building responsive user interfaces.
+                    </p>
                 </div>
             </div>
-        </section>
-        <hr>
-        <section class="secondsection reveal" id="education">
-            <span class="text-gray">My Academic Journey</span>
-            <h1>Education</h1>
-            <div class="education-container">
-                <div class="education-card">
-                    <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-                    <div class="edu-content">
-                        <span class="year">2024 - 2027</span>
-                        <h3>Bachelor of Computer Applications (BCA)</h3>
-                        <p>Shree Swaminarayan College of Computer Science</p>
-                        <p class="text-gray" style="margin-top: 5px; font-style: italic;">Currently pursuing Semester 4
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <hr>
-        <section class="secondsection reveal" id="skills">
-            <span class="text-gray">My Technical Level</span>
-            <h1>My Skills</h1>
-            <div class="skills-wrapper">
-                <!-- Row 1: Scrolls Left -->
-                <div class="scroll-row scroll-left">
-                    <div class="tech-item">
-                        <i class="fa-brands fa-html5" style="color: #e34c26;"></i>
-                        <h3>HTML</h3>
-                    </div>
-                    <div class="tech-item">
-                        <i class="fa-brands fa-css3-alt" style="color: #264de4;"></i>
-                        <h3>CSS</h3>
-                    </div>
-                    <div class="tech-item">
-                        <i class="fa-brands fa-js" style="color: #f0db4f;"></i>
-                        <h3>JavaScript</h3>
-                    </div>
-                    <div class="tech-item">
-                        <i class="fa-brands fa-bootstrap" style="color: #7952b3;"></i>
-                        <h3>Bootstrap</h3>
-                    </div>
-                    <!-- Duplicates for Loop -->
-                    <div class="tech-item">
-                        <i class="fa-brands fa-html5" style="color: #e34c26;"></i>
-                        <h3>HTML</h3>
-                    </div>
-                    <div class="tech-item">
-                        <i class="fa-brands fa-css3-alt" style="color: #264de4;"></i>
-                        <h3>CSS</h3>
-                    </div>
-                    <div class="tech-item">
-                        <i class="fa-brands fa-js" style="color: #f0db4f;"></i>
-                        <h3>JavaScript</h3>
-                    </div>
-                    <div class="tech-item">
-                        <i class="fa-brands fa-bootstrap" style="color: #7952b3;"></i>
-                        <h3>Bootstrap</h3>
-                    </div>
-                </div>
+        </div>
+        <div class="arrow-container">
+            <i class="fa-solid fa-chevron-down icon arrow" onclick="location.href='#skills'"></i>
+        </div>
+    </section>
 
-                <!-- Row 2: Scrolls Right -->
-                <div class="scroll-row scroll-right">
-                    <div class="tech-item">
-                        <i class="fa-brands fa-python" style="color: #306998;"></i>
-                        <h3>Python</h3>
-                    </div>
-                    <div class="tech-item">
-                        <i class="fa-brands fa-java" style="color: #5382a1;"></i>
-                        <h3>Java</h3>
-                    </div>
-                    <div class="tech-item">
-                        <i class="fa-brands fa-react" style="color: #61dbfb;"></i>
-                        <h3>React</h3>
-                    </div>
-                    <!-- Duplicates for Loop -->
-                    <div class="tech-item">
-                        <i class="fa-brands fa-python" style="color: #306998;"></i>
-                        <h3>Python</h3>
-                    </div>
-                    <div class="tech-item">
-                        <i class="fa-brands fa-java" style="color: #5382a1;"></i>
-                        <h3>Java</h3>
-                    </div>
-                    <div class="tech-item">
-                        <i class="fa-brands fa-react" style="color: #61dbfb;"></i>
-                        <h3>React</h3>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <hr>
-        <section class="secondsection reveal" id="services">
-            <span class="text-gray">My Expertise</span>
-            <h1>What I Do</h1>
-            <div class="services-container">
-                <div class="service-card">
-                    <i class="fa-solid fa-code service-icon"></i>
-                    <h3>Frontend Development</h3>
-                    <p>Building responsive and highly interactive front-end and back-end applications using modern technologies.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fa-solid fa-pen-nib service-icon"></i>
-                    <h3>Graphic & Web Design</h3>
-                    <p>Creating beautiful, intuitive, and user-centric designs to provide the best user experience.</p>
-                </div>
-                <div class="service-card">
-                    <i class="fa-solid fa-video service-icon"></i>
-                    <h3>Video Editing</h3>
-                    <p>Crafting engaging visual stories through professional video editing and motion graphics.</p>
-                </div>
-            </div>
-        </section>
-        <hr>
-        <section class="secondsection reveal" id="projects">
-            <span class="text-gray">My Portfolio</span>
-            <h1>Recent Projects</h1>
-            <div class="project-container">
-                <div class="project-card">
-                    <div class="project-inner">
-                        <div class="project-front">
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKkAAAEqCAMAAABZWIDfAAABBVBMVEX///8TExMAAAANDQ38/PwQEBAqKire3t729va6urqlpaX8//9cXFy9vb0GBgbY2NhKSkru7u5ycnL3///+pxypqamfn59WVlZ8fHzl5eXs7Oz8//uQkJC0tLTNzc0mJiZqamo6OjpNTU1CQkKKior5//X3pACMjIzGxsYdHR0wMDBubm7zqAD/pBDwxmr0qQD34K399uX67cj304/52p739Nr55cXwwGvrsi7trUPyvF3r1Jz246j779n878/2znvxqCf57uPz8cj116fusRzwx37uqjX6umbypyH+5L7qvV3sv0v8nhfpukHy1pT22rD50KT3rEH77Ln9/+bnuHPyzWfstkiyU58NAAAHLUlEQVR4nO2YfVfaSBTGw2QikUAQE14DiEBSsVBBq21dX7pry2Jrd7d21+//UXbunQSw59ia0oNnzz6/f0yGeXnmzr13bjQMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPzvkE8t4B7tSr/zvNmy5w1Sof5ky5W4UbYqueLykHq52ek8K9fnDfYy8+011LjN0r156bd2rtIqGSmRdiUjYpqxrF16MewON5aVWcv81CtqC0uj3U2GVGP9ZXEP3a1Y1W+dbLw9eskY2R639u105yU7wspoLLHFUuWGmckIuyd0Y8to6i5CxCs2hYiHqLY9bqrMW7g1UZ90anFDVr2blj3QzaKZzqY1wXKEy4NrC6XJ2uZGIdmL6MUK9PL8xxSlB5S2aJjFvUyxmSi1Bv1k4kEqB2jTMJGp9ausONNIlFoDtYilZzQtYWoF5Jcll34W+WcdrTinlWq0hh3VUjdNktjJ0yymWY+VZjL7Zjyxlp/GpO4uHTpvVbQTpWqR7VrG1A5g1Xa1qkJsUoufWjwkT/OUCsReU3cjj9jmbmq+Iunio87Gp1Cr0WYzop9G6Q4ZgqOinqEJy3ObUmubNy+6aifPRWKFPA3ZpuCS+2S23cVsctdMfKjh0nTbRmwDdytRyhPzk/71sWRbudq2DmntnYlS0aG2Hq9MgVRMlMr6Zrnf0SGfpxDZWMy2zZ16dmx5bVxjT8STaH3PkpF6ibTYpfqOFTudVlpOljb3aeWS+NqzbLtUde8pLbNLDhrJSEvwoy1id9ZKeZMUgdpvUiCzuVp13+WgWVLKotiN2UaNe0obhX5n3+KEsVBa0mfPfWTXpQDVP4jYKZeU5n5Aqc7ipk5ES0oLiWXcLXKOZZs2ahkeolNDrFTqhBc7H7vwXKmlZa2iVBqbgo9J6MzxKKXFAS9NYpdtymnX3ND3nL2zpJSCi0JqJZu2BWe9ZtG2Wd8jlDYsOnTRadtyOaJKppmkOVK68ZVN3e6KSncpJjJ8WTxWqc5XHHDLSquJNzKSJrYsOVcqnq+mtLg4U/ur2H9IaWNgJYtw2MRKOSuZW/OZO+xUutYS8S2/ilKd9di16hRUS/n0IaXtZN24o1aa1W5ey5Xb+jZvzq+8WODmakpzPJbnbs1P79tK9xZKi7pWkCowu3F9xJVguZRsqGJwzUjmtX+GUjJkVl/2g+yjlHKb3XOTYqC4VEpZrhioSbbIM3aU5hIlLHLTlZTu6Zu40q4MXG2UrvyO0vic83utjbhy2mhoCy4gAxZ4QLXQ2p/fqyvlU06JFudxfnSVK3wn9reS8tTUxSd5o1KqTBljkVKpc4Srk64ufFfKUq24SlY3Y3vDzYid756+OmldrCoVm+r6NnWYCdGtFIrZYiFHnyQUo3Y3qcBVMStXVqqGxB9EdTWR6FFwyQE1bGql9P1EyzTEvLFAnwjqZVd9V+Xpy0Ma2Z3KooC3yxn9vVVTnVzq2dR5NSvmNSYvW02l1Mj289X8M04nxRovJzcrCn4s0hO5mJRleuTayCjlOtX8doFi3u63Dfngp3ax2e31qpV63MGmOXL8oVen2drplN5Hhk4YpB0UqI04weRwfHR09PJwIoPUM/wIxxNPLeukGhMYQXjy6vUwGt2MIv/NRbrRP4j3yh+HnpPWKJPTSImMopGv5I69dfzjJZh8uJmeGCmtIo9/OTs8n0wmF5f+yL9ei00DzziLorcvjz1PuVvgPWbRQKqdBUHoqTHeZ3/461r8NAil/G2qTvHyInSc8FFjpFSO6jj21eWxF77130ycdZy+DBUXd8NRNDw9OvYeZZ3A8wL75MW7aHjtXIz894Fch1InkIF0wqtp5PvDd79fHytjLTyAnpyEIJD8ahi/nlxOD6Kb2ZnnjUfRtfKbNSiNCS5eKakz5bEfjs4nSq3yQeW28h6B8g8nPDx7NR2NotHw46E6gY83n9b7H1fpydtPylt9fzQavr67HF+om4UM6RFkZqU8PL/+48Wntzcjf+ZH0z+lI51JNLpdq1AVzkFoX9+pDDmb+b5KlQcHrz++uLwaj29PTk6ux+Or96fT2cHQv/H9iHbz14RsHryMPgRryVHLUmWgTvbNLPIPDt4NfbYuETH0dzYb+dHBMPJnp3/SDUwm/fz6yxp9dEluEF68/6zuyBtSqiLMv8+72TCKppe3X7QdpXP893nq6+1naZXBl8M//vk0JDP6N3ONZNfhgT89PRofqyQVstLAUTG2zrhfwqF4V1VAcD4+enE3i6Lk7Idv70jkRF1i1GeedpcenwZKmkE4mRxej6/Ozs5uf1Mag6Q4eFppD0BZ1UlZEj4NYXK4T3zG34bESapGFP8NuwIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQ/wJvB5z0LNYKlwAAAABJRU5ErkJggg=="
-                                alt="Amazon Clone">
-                            <div class="front-title">Amazon Clone</div>
+    <!-- Skills Section -->
+    <section id="skills" class="gsap-reveal">
+        <p class="section__text__p1">Explore My</p>
+        <h1 class="title">Skills</h1>
+        <div class="experience-details-container">
+            <div class="about-container">
+                <!-- Box 1: Web & Version Control -->
+                <div class="details-container glass-card">
+                    <h2 class="experience-sub-title">Web & Version Control</h2>
+                    <div class="skills-grid-inner">
+                        <div class="skill-box html-article">
+                            <div class="skill-icon-wrapper">
+                                <i class="devicon-html5-plain colored skill-icon"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3>HTML5</h3>
+                                <span class="skill-level">Experienced</span>
+                            </div>
                         </div>
-                        <div class="project-back">
-                            <h3>Amazon Clone</h3>
-                            <p>A responsive replica of the Amazon e-commerce website.</p>
-                            <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+
+                        <div class="skill-box css-article">
+                            <div class="skill-icon-wrapper">
+                                <i class="devicon-css3-plain colored skill-icon"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3>CSS3</h3>
+                                <span class="skill-level">Experienced</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-box js-article">
+                            <div class="skill-icon-wrapper">
+                                <i class="devicon-javascript-plain colored skill-icon"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3>JavaScript</h3>
+                                <span class="skill-level">Experienced</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-box react-article">
+                            <div class="skill-icon-wrapper">
+                                <i class="devicon-react-original colored skill-icon"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3>React</h3>
+                                <span class="skill-level">Intermediate</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-box git-article">
+                            <div class="skill-icon-wrapper">
+                                <i class="devicon-git-plain colored skill-icon"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3>Git & GitHub</h3>
+                                <span class="skill-level">Intermediate</span>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card">
-                    <div class="project-inner">
-                        <div class="project-front">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReQLURqrhSIsjdhQW7KTznFbO7Olx3XQNQbI3lWeq7Bg&s"
-                                alt="Myntra Clone">
-                            <div class="front-title">Myntra Clone</div>
+                <!-- Box 2: Programming & Fundamentals -->
+                <div class="details-container glass-card">
+                    <h2 class="experience-sub-title">Programming & Fundamentals</h2>
+                    <div class="skills-grid-inner">
+                        <div class="skill-box c-article">
+                            <div class="skill-icon-wrapper">
+                                <i class="devicon-c-plain colored skill-icon"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3>C Language</h3>
+                                <span class="skill-level">Intermediate</span>
+                            </div>
                         </div>
-                        <div class="project-back">
-                            <h3>Myntra Clone</h3>
-                            <p>A functional clone of the Myntra fashion store.</p>
-                            <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="project-card">
-                    <div class="project-inner">
-                        <div class="project-front">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-sCtA9l0an44keLGglcL8yUs-P2qgV8TNKQ&s"
-                                alt="To-Do App">
-                            <div class="front-title">To-Do App</div>
+                        <div class="skill-box cpp-article">
+                            <div class="skill-icon-wrapper">
+                                <i class="devicon-cplusplus-plain colored skill-icon"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3>C++</h3>
+                                <span class="skill-level">Intermediate</span>
+                            </div>
                         </div>
-                        <div class="project-back">
-                            <h3>To-Do App</h3>
-                            <p>Interactive task management app with drag-and-drop features.</p>
-                            <a href="#"><i class="fa-solid fa-up-right-from-square"></i></a>
+
+                        <div class="skill-box dsa-article">
+                            <div class="skill-icon-wrapper">
+                                <i class="fa-solid fa-diagram-project dsa-icon skill-icon"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3>DSA</h3>
+                                <span class="skill-level">Intermediate</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-box php-article">
+                            <div class="skill-icon-wrapper">
+                                <i class="devicon-php-plain colored skill-icon"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3>PHP</h3>
+                                <span class="skill-level">Intermediate</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-box java-article">
+                            <div class="skill-icon-wrapper">
+                                <i class="devicon-java-plain colored skill-icon"></i>
+                            </div>
+                            <div class="skill-info">
+                                <h3>Java</h3>
+                                <span class="skill-level">Intermediate</span>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+        <div class="arrow-container">
+            <i class="fa-solid fa-chevron-down icon arrow" onclick="location.href='#projects'"></i>
+        </div>
+    </section>
 
-<div class="developer-card-container">
-  <div class="code-circle-wrapper">
-    <div class="code-circle">
-      <div class="code-content">
-        <div class="code-line"><span class="keyword">const</span> <span class="variable">dev</span> = {</div>
-        
-        <div class="code-line indent"><span class="property">name</span>: <span class="string">'Solanki Paresh'</span>,</div>
-        <div class="code-line indent"><span class="property">role</span>: <span class="string">'Full Stack'</span>,</div>
-        <div class="code-line indent"><span class="property">skills</span>: [<span class="string">'React'</span>, <span class="string">'Node'</span>],</div>
-        <div class="code-line indent"><span class="property">status</span>: <span class="string">'Building'</span></div>
-        
-        <div class="code-line">};</div>
-        
-        <div class="code-line method"><span class="variable">dev</span>.<span class="function">innovate</span>();</div>
-      </div>
-    </div>
-  </div>
-</div>
+    <!-- Projects Section -->
+    <section id="projects" class="gsap-reveal">
+        <p class="section__text__p1">Browse My Recent</p>
+        <h1 class="title">Projects</h1>
+        <div class="experience-details-container">
+            <div class="projects-grid">
+                <!-- Project 1: Nexcent -->
+                <div class="details-container color-container glass-card project-card-box">
+                    <div class="project-img-wrapper">
+                        <img src="Nexcent.png" alt="Nexcent Project" class="project-img" />
+                    </div>
+                    <h2 class="experience-sub-title project-title">Nexcent SaaS Platform</h2>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/solankiparesh7051-spec/Nexcent')">
+                            GitHub <i class="fa-brands fa-github"></i>
+                        </button>
+                        <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/solankiparesh7051-spec/Nexcent')">
+                            Live Demo <i class="fa-solid fa-up-right-from-square"></i>
+                        </button>
+                    </div>
+                </div>
 
-    </main>
+                <!-- Project 2: Myntra -->
+                <div class="details-container color-container glass-card project-card-box">
+                    <div class="project-img-wrapper">
+                        <img src="myntra_project.jpg" alt="Myntra Fashion Store Project" class="project-img" />
+                    </div>
+                    <h2 class="experience-sub-title project-title">Myntra Fashion Store</h2>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/solankiparesh7051-spec/Portfolio')">
+                            GitHub <i class="fa-brands fa-github"></i>
+                        </button>
+                        <button class="btn btn-color-2 project-btn" onclick="window.open('https://solankiparesh7051-spec.github.io/Nexcent/')">
+                            Live Demo <i class="fa-solid fa-up-right-from-square"></i>
+                        </button>
+                    </div>
+                </div>
 
 
-    <footer id="contact" class="reveal">
-        <div class="footer-content">
-            <div class="footer-section about">
-                <h3>Paresh</h3>
-                <p>Passionate Web Developer & Graphic Designer creating seamless web experiences. Let's build something
-                    amazing together.</p>
-                <div class="social-links">
-                    <a href="https://github.com/" target="_blank"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-                    <a href="#" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                <!-- Project 4: To-Do App -->
+                <div class="details-container color-container glass-card project-card-box">
+                    <div class="project-img-wrapper">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-sCtA9l0an44keLGglcL8yUs-P2qgV8TNKQ&s" alt="To-Do App Project" class="project-img" />
+                    </div>
+                    <h2 class="experience-sub-title project-title">Interactive Task Manager</h2>
+                    <div class="btn-container">
+                        <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/solankiparesh7051-spec/To-do-App')">
+                            GitHub <i class="fa-brands fa-github"></i>
+                        </button>
+                        <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/solankiparesh7051-spec/To-do-App')">
+                            Live Demo <i class="fa-solid fa-up-right-from-square"></i>
+                        </button>
+                    </div>
                 </div>
             </div>
+        </div>
+        <div class="arrow-container">
+            <i class="fa-solid fa-chevron-down icon arrow" onclick="location.href='#contact'"></i>
+        </div>
+    </section>
 
-            <div class="footer-section links">
-                <h3>Quick Links</h3>
-                <ul class="footer-links">
-                    <li><a href="#home">Home</a></li>
+    <!-- Contact Section -->
+    <section id="contact" class="gsap-reveal">
+        <p class="section__text__p1">Get in Touch</p>
+        <h1 class="title">Contact Me</h1>
+        <div class="contact-info-upper-container">
+            <div class="contact-info-container glass-card">
+                <i class="fa-solid fa-envelope contact-icon email-brand"></i>
+                <p><a href="mailto:solankiparesh7051@gmail.com">solankiparesh7051@gmail.com</a></p>
+            </div>
+            <div class="contact-info-container glass-card">
+                <i class="fa-brands fa-linkedin contact-icon linkedin-brand"></i>
+                <p><a href="https://www.linkedin.com/in/paresh-solanki-700b31337" target="_blank">LinkedIn Profile</a></p>
+            </div>
+            <div class="contact-info-container glass-card">
+                <i class="fa-brands fa-github contact-icon github-brand"></i>
+                <p><a href="https://github.com/solankiparesh7051-spec" target="_blank">GitHub Profile</a></p>
+            </div>
+            <div class="contact-info-container glass-card">
+                <i class="fa-solid fa-phone contact-icon phone-brand"></i>
+                <p><a href="tel:+919023267236">+91 9023267236</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <nav class="footer-nav">
+            <div class="nav-links-container">
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#services">Services</a></li>
+                    <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </div>
-
-            <div class="footer-section contact">
-                <h3>Contact Info</h3>
-                <ul class="contact-details">
-                    <li><i class="fa-solid fa-location-dot"></i> Gujarat, India</li>
-                    <li><i class="fa-solid fa-phone"></i> +91 9023267236</li>
-                    <li><i class="fa-solid fa-envelope"></i>solankiparesh7051@gmail.com</li>
-                </ul>
-            </div>
+        </nav>
+        <div class="footer-socials-wrapper">
+            <a href="https://www.linkedin.com/in/paresh-solanki-700b31337" target="_blank" title="LinkedIn" class="footer-social-link linkedin-icon">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/solankiparesh7051-spec" target="_blank" title="GitHub" class="footer-social-link github-icon">
+                <i class="fa-brands fa-github"></i>
+            </a>
+            <a href="https://www.instagram.com/p_a_r_e_s_h__bharwad_01?igsh=MWhseTNmaGc1emFweg==" target="_blank" title="Instagram" class="footer-social-link instagram-icon">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://youtube.com/@pareshsolanki-n5h?si=9RcobCOnErh9ow3h" target="_blank" title="YouTube" class="footer-social-link youtube-icon">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a href="https://wa.me/919023267236" target="_blank" title="WhatsApp" class="footer-social-link whatsapp-icon">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
         </div>
-        <div class="footer-bottom">
-            Copyrights &#169; 2024 PareshPortfolio.com | All rights reserved
-        </div>
+        <p class="copyright-text">Copyright &#169; 2026 Paresh Solanki. All Rights Reserved.</p>
     </footer>
 
+    <!-- Libraries: Typed.js, GSAP, ScrollTrigger -->
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-
-    <script>
-        var typed = new Typed('#element', {
-            strings: ['Web Developer', 'Graphic Designer', 'Web Designer', 'video Editer'],
-            typeSpeed: 50,
-        });
-
-        // Mobile Menu Toggle
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('nav-links');
-
-        hamburger.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        // Close menu when a link is clicked
-        document.querySelectorAll('nav ul li a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
-
-        // Theme Toggle
-        const themeToggle = document.getElementById('theme-toggle');
-        const body = document.body;
-        const icon = themeToggle.querySelector('i');
-
-        themeToggle.addEventListener('click', () => {
-            body.classList.toggle('light-mode');
-            icon.classList.toggle('fa-sun');
-            icon.classList.toggle('fa-moon');
-        });
-
-        // Scroll Reveal Animation Script
-        window.addEventListener('scroll', reveal);
-
-        function reveal() {
-            var reveals = document.querySelectorAll('.reveal');
-
-            for (var i = 0; i < reveals.length; i++) {
-                var windowheight = window.innerHeight;
-                var revealtop = reveals[i].getBoundingClientRect().top;
-                var revealpoint = 150;
-
-                if (revealtop < windowheight - revealpoint) {
-                    reveals[i].classList.add('active');
-                }
-            }
-        }
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
+    <!-- Custom Application Script -->
+    <script src="script.js"></script>
 </body>
-
 </html>
